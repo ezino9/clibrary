@@ -1,0 +1,58 @@
+<div class="row">
+    <!-- Left sidebar -->
+    <div class="col-md-2">
+        <% if @entrepreneurships.exists? %>
+          <div class="list-group">
+              <% @entrepreneurships.each do |entrepreneurship| %>
+                <li class="list-group-item"><%= link_to entrepreneurship.name, entrepreneur_path(entrepreneurship) %></li>
+              <% end %>
+          </div>
+        <% else %>
+          <p>THis is underconstruction, come back later please!!</p>
+        <%end%>
+    </div><!-- End of leftside bar -->
+
+    <!-- main content-->
+    <div class="col-md-10">
+        <% if @entrepreneurship.name == "Creativity" %>
+           <h2 class="page-header text-center">Creativity</h2>
+            <% if @blogs.exists?%>
+               <% @blogs.each do |blog| %>
+                 <div class="well">
+                    <h3 class="page-header"><%= raw blog.title%></h3> 
+                    <%= raw blog.body%> 
+                 </div>
+               <% end %>
+            <% else %>
+              <p>This part is under construction, it will be available as soon as possible</p>
+            <% end %>
+        <% end %>
+        <% if @entrepreneurship.name == "Innovation" %>
+           <h2 class="page-header text-center">Innovation</h2>
+            <% if @blogs.exists?%>
+               <% @blogs.each do |blog| %>
+                 <div class="well">
+                    <h3 class="page-header"><%= raw blog.title%></h3> 
+                    <%= raw blog.body%> 
+                 </div>
+               <% end %>
+            <% else %>
+              <p>This page is under construction, it will be available as soon as possible</p>
+            <% end %>
+        <% end %>
+        <% if @entrepreneurship.name == "Career entrepreneurship" %>
+           <h2 class="page-header text-center">Career entrepreneurship</h2>
+            <% if @blogs.exists?%>
+               <% @blogs.each do |blog| %>
+                 <div class="well">
+                    <h3 class="page-header"><%= raw blog.title%></h3> 
+                    <%= raw blog.body%> 
+                 </div>
+               <% end %>
+            <% else %>
+              <p>This page is under construction, it will be available as soon as possible</p>
+            <% end %>
+        <% end %>
+    </div><!-- End of main content -->
+    
+</div>

@@ -1,0 +1,8 @@
+<h2><%= @ablog.title %></h2>
+<%= image_tag  "#{@ablog.coverpicture}", width:'100%' %>
+<p><%= raw @ablog.body%></p>
+<%= link_to "#{@ablog.assessment.name}", assessment_path(params[:id])%>
+<br>
+<br>
+<p><%= link_to  "Edit", edit_assessmentblog_path, class:'btn btn-info' %> | <%= link_to  "Delete", edit_assessmentblog_path(@ablog), method: :delete, class:'btn btn-danger' %></p>
+

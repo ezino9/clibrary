@@ -1,0 +1,174 @@
+<%if user_signed_in? %>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">cl B</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li><%= link_to  "Dashboard", dashboard_path %></li>
+            <li><%= link_to  "Entrepreneurship", entrepreneurs_path %></li>
+            <li><%= link_to  "Entrepreneurship Posts", entrepreneurblogs_path %></li>
+            <li><%= link_to  "Assessment", assessments_path %></li>
+            <li><%= link_to  "Assessment Posts", assessmentblogs_path %></li>
+            <li><%= link_to  "logout", destroy_user_session_path, method: :delete %></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+<% else %>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Career</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="<%= params[:controller] =='about' ? 'active' : '' %>"><%= link_to  "About us", root_path %></li>
+            <li class=" dropdown <%= params[:controller] == 'clibraries' ? 'active' : ''%>"><%= link_to  "Career Library", clibraries_path, class:'dropdown-toggle', 'data-toggle' => 'dropdown' %>
+            <ul class="dropdown-menu multi-column columns-3">
+            <div class="row">
+                <div class="col-md-4">
+                    <ul class="multi-column-dropdown list-unstyled">
+                        <li><a href="#">Innovation</a></li>
+                        <li><a href="#">Creativity</a></li>
+                        <li><a href="#">Technology</a></li>
+                        <li><a href="#">link</a></li>
+                        <li><a href="#">Link</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <ul class="multi-column-dropdown list-unstyled">
+                        <li><a href="#">link</a></li>
+                        <li><a href="#">link</a></li>
+                        <li><a href="#">link</a></li>
+                        <li><a href="#">link</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <ul class="multi-column-dropdown list-unstyled">
+                        <li><a href="#">link</a></li>
+                        <li><a href="#">link</a></li>
+                        <li><a href="#">link</a></li>
+                        <li><a href="#">link</a></li>
+                    </ul>
+                </div>
+            </div>
+          </ul>
+            </li>
+            <li class=" dropdown <%= params[:controller] == 'cnewses' ? 'active' : ''%>"><%= link_to  "Career Blog", cnewses_path, class:'dropdown-toggle', 'data-toggle' => 'dropdown' %>
+            <ul class="dropdown-menu multi-column columns-3">
+            <div class="row">
+                <div class="col-md-4">
+                    <ul class="multi-column-dropdown list-unstyled">
+                        <li><a href="#">Innovation</a></li>
+                        <li><a href="#">Creativity</a></li>
+                        <li><a href="#">Technology</a></li>
+                        <li><a href="#">link</a></li>
+                        <li><a href="#">Link</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <ul class="multi-column-dropdown list-unstyled">
+                        <li><a href="#">link</a></li>
+                        <li><a href="#">link</a></li>
+                        <li><a href="#">link</a></li>
+                        <li><a href="#">link</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <ul class="multi-column-dropdown list-unstyled">
+                        <li><a href="#">link</a></li>
+                        <li><a href="#">link</a></li>
+                        <li><a href="#">link</a></li>
+                        <li><a href="#">link</a></li>
+                    </ul>
+                </div>
+            </div>
+          </ul>
+            </li>
+            <li class=" dropdown <%= params[:controller] == 'entrepreneurs' ? 'active' : ''%>"><%= link_to  "Entrepreneurship", entrepreneurs_path, class:'dropdown-toggle', 'data-toggle' => 'dropdown' %>
+            <ul class="dropdown-menu multi-column columns-3">
+            <div class="row">
+              <% if @entrepreneurships.exists? %>
+              <% @entrepreneurships.each do |eship| %> 
+                <div class="col-md-4">
+                    <ul class="multi-column-dropdown list-unstyled">
+                        <li><%= link_to  eship.name, entrepreneur_path(eship) %></li>
+                    </ul>
+                </div>
+                <% end %>
+                <% else %>
+                <p></p>
+                <% end %>  
+            </div>
+          </ul>
+            </li>
+            <li class="<%= params[:controller] == 'researchs' ? 'active' : ''%>"><%= link_to  "Research", researchs_path%>
+            <ul class="dropdown-menu multi-column columns-3">
+            <div class="row">
+                <div class="col-md-4">
+                    <ul class="multi-column-dropdown list-unstyled">
+                        <li><a href="#">Innovation</a></li>
+                        <li><a href="#">Creativity</a></li>
+                        <li><a href="#">Technology</a></li>
+                        <li><a href="#">link</a></li>
+                        <li><a href="#">Link</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <ul class="multi-column-dropdown list-unstyled">
+                        <li><a href="#">link</a></li>
+                        <li><a href="#">link</a></li>
+                        <li><a href="#">link</a></li>
+                        <li><a href="#">link</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <ul class="multi-column-dropdown list-unstyled">
+                        <li><a href="#">link</a></li>
+                        <li><a href="#">link</a></li>
+                        <li><a href="#">link</a></li>
+                        <li><a href="#">link</a></li>
+                    </ul>
+                </div>
+            </div>
+          </ul>
+            </li>
+
+            <li class=" dropdown <%= params[:controller] == 'assessments' ? 'active' : ''%>"><%= link_to  "Assessment", assessments_path, class:'dropdown-toggle', 'data-toggle' => 'dropdown' %>
+            <ul class="dropdown-menu multi-column columns-2">
+            <div class="row">
+                <% if @assessments.exists? %>
+                <% @assessments.each do |assessment| %> 
+                <div class="col-md-4">
+                    <ul class="multi-column-dropdown list-unstyled">
+                        <li><%= link_to  assessment.name, assessment_path(assessment) %></li>
+                    </ul>
+                </div>
+                <% end %>
+                <% else %>
+                <p></p>
+                <% end %>
+            </div>
+          </ul>
+            </li><!-- End of Assessment -->
+            <li class="<%= params[:controller] == 'partners' ? 'active' : '' %>"><%= link_to  "Our partners", partners_path %></li>
+            <li class="<%= params[:controller] == 'contact' ? 'active' : '' %>"><%= link_to  "Contact us", contact_path %></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+<% end%>

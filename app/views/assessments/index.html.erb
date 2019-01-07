@@ -1,0 +1,18 @@
+<%= link_to  "Add New", new_assessment_path, class:'btn btn-primary pull-right' %>
+<h2 class="page-header">Manage Assessment categories</h2>
+<table class="table table-stripped">
+    <tr>
+      <th>Names</th>
+      <th>Actions</th>
+    </tr>
+    <% if @assessments.exists? %>
+       <% @assessments.each do |assessment|%>
+         <tr>
+            <td><%= assessment.name %></td>
+            <td><%= link_to  "Edit", edit_assessment_path(assessment), class:'btn btn-primary' %> | <%= link_to  "Delete",edit_assessment_path(assessment), method: :delete, class:'btn btn-danger' %></td>
+        </tr>
+       <% end %>
+    <% else %>
+       <p>No assessment categories available currently</p>
+    <% end %>
+</table>

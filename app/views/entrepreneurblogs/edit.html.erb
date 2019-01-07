@@ -1,0 +1,26 @@
+<%= form_for( @eblog ) do |f| %>
+  <h2 class="form-header">Edit Entrepreneurship Post </h2>
+       <% if @eblog.errors %>
+        <% @eblog.errors.full_messages.each do |msg|%>
+         <div class="alert alert-danger"><%= msg %></div>
+        <%end%>
+        <%end%>
+  <div class="form-group">
+      <%= f.label :title%>
+      <%= f.text_field :title, class:'form-control'%>
+  </div>
+  <div class="form-group">
+      <%= f.label :category%>
+      <%= f.select :entrepreneur_id,Entrepreneur.all.collect {|x|[x.name, x.id]},{:include_blank => 'Select category'}, class:'form-control'%>
+  </div>
+  <div class="form-group">
+      <%= f.label :body%>
+      <%= f.cktext_area :body, class:'form-control'%>
+  </div>
+  <div class="form-group">
+      <%= f.label :coverpicture%>
+      <%= f.file_field :coverpicture, class:'form-control'%>
+  </div>
+  <%= f.submit "Submit" , class:'btn btn-primary'%>
+<% end %>
+

@@ -1,0 +1,5 @@
+<h2><%= @eblog.title %></h2>
+<%= image_tag  "#{@eblog.coverpicture}", width:'100%' %>
+<p><%= raw @eblog.body%></p>
+<br>
+<p><%= link_to  "Edit", edit_entrepreneurblog_path, class:'btn btn-info' %> | <%= link_to  "Delete", edit_entrepreneurblog_path(@eblog), method: :delete, class:'btn btn-danger' %></p>

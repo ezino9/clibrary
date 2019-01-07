@@ -1,0 +1,13 @@
+<%= form_for( @entrepreneurship ) do |f| %>
+<h2 class="form-header">New Entrepreneurship Categories </h2>
+       <% if @entrepreneurship.errors %>
+        <% @entrepreneurship.errors.full_messages.each do |msg|%>
+         <div class="alert alert-danger"><%= msg %></div>
+        <%end%>
+        <%end%>
+<div class="form-group">
+    <%= f.label :name%>
+    <%= f.text_field :name, class:'form-control'%>
+</div>
+<%= f.submit 'submit', class:'btn btn-success'%>
+<% end %>

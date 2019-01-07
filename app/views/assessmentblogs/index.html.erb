@@ -1,0 +1,15 @@
+<%= link_to  "Add New", new_assessmentblog_path, class:'btn btn-primary pull-right' %>
+ <hr>
+<div class="row">
+  <% if @ablogs.exists?%>
+  <% @ablogs.each do |blog|%>
+    <div class="col-md-3">
+        <h4><%= link_to  "#{blog.title}", assessmentblog_path(blog) %><h4>
+        <%= image_tag  "#{blog.coverpicture}", width:'50%' %>
+    </div>
+  <%end%>
+<% else %>
+<p>No post available</p>
+<% end %>
+  
+</div>

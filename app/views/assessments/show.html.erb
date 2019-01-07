@@ -1,0 +1,31 @@
+<div class="row">
+    <div class="col-md-2">
+        <div class="list-group">
+           <!-- to retrieve all assessments type from database -->
+           <% if @assessments.exists? %>
+              <!-- Using each method to display every assement item--> 
+              <% @assessments.each do |assessment|%>
+                <li class="list-group-item">
+                    <%= link_to "#{assessment.name}", assessment_path(assessment)%>
+                </li>
+              <% end %>
+           <% end %>
+        </div><!--End of list group -->
+    </div><!--End of leftside bar -->
+    <div class="col-md-10">
+       <h2 class="page-header text-center"><%= @assessment.name %></h2>
+       <!--Dispalying blog from corresponding selected assessment type or category --> 
+       <% if @blogs.exists? %><!-- checking if there is any post from database-->
+          <% @blogs.each do |blog|%>
+             <div class="panel-default">
+                <div class="panel-body">
+                    <h3 class="page-header"><%= blog.title%></h3>
+                    <p><%= raw blog.body %></p>
+                </div> 
+             </div><!-- End of panel default-->
+          <% end %><!-- End of retrieving all posts fron db -->
+       <% else%>
+        <p>This part is undercontruction it will be avaible very soon. Keep visiting...</p>
+       <% end %>
+    </div>
+</div>

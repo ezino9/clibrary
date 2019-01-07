@@ -1,0 +1,210 @@
+@import "partials/colors";
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+    position: relative;
+    min-height: 100%;
+  }
+  body {
+    /* Margin bottom by footer height */
+    margin-bottom: 60px;
+    //padding-top: 50px;
+    padding-top: 90px;
+    
+
+  }
+  .footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    /* Set the fixed height of the footer here */
+    //height: 60px;
+    border-top: 2px solid rgb(4, 67, 204);
+
+  }
+body #container{
+    //padding-bottom: 400px !important;
+    padding-bottom: 600px !important;
+}
+  //customize dropdown
+  .dropdown:hover .dropdown-menu {
+    display: block;
+  }
+//customized navbar
+.navbar-inverse{
+    background-color: $navBg !important;
+    border: none !important;
+}
+.navbar .navbar-brand{
+  padding-right: 30px;
+}
+
+
+.navbar a{
+color: $navTxt !important;
+//font-family: $fontNavitem;
+margin-right: 1px;
+}
+.navbar-inverse .navbar-nav > a:hover {
+    color: $navTxthover !important;
+}
+.navbar-inverse .navbar-nav > .active > a{
+    color: $navTxthover !important;
+    background-color: $navBg !important;
+
+}
+//dropdown menu
+.navbar .dropdown{
+    margin-top: 0px;
+    padding-bottom: 0px;
+}
+li.dropdown .dropdown-toggle{
+    background-color: $navBg !important;
+}
+.navbar .dropdown .dropdown-menu{
+    margin-left: 0px !important;
+    width: 500px !important;
+    height: 150px !important;
+    border-top: 2px $navTxthover solid;
+    background-color: $navHover!important;;
+}
+.navbar .dropdown .dropdown-menu li a{
+    color: $navTxt;
+    background-color: $navHover !important;
+}
+.navbar .dropdown li a:hover{
+    color: $navTxthover !important;
+}
+
+//multcolumn dropdown
+.multi-column-dropdown li {
+    order: none !important;
+    padding: 5px;
+}
+.multi-column-dropdown li a:hover {
+    text-decoration: none;
+}
+
+//footer style
+.footer {
+    //position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  //height: 60px;
+    color: $navTxt !important;
+    background-color: $navBg !important;
+  }
+.footer li a{
+   color: $navTxt !important; 
+}
+.footer li a:hover{
+    color: $navTxthover !important;
+    text-decoration: none; 
+ }
+
+  //category
+.list-group{
+    padding-top: 100px !important;
+}
+.list-group .list-group-item{
+    padding-top: 10px;
+    background-color: $navHover !important;
+    color: $navTxt !important;
+    border-color: $navBg !important;
+}
+.list-group .list-group-item:hover{
+    background-color: $navBg !important;
+    color: $navTxt !important;
+    //border-color: $navHover !important;
+}
+.list-group .list-group-item a{
+    color: $navTxt !important;
+}
+.list-group .list-group-item a:hover{
+    text-decoration: none;
+    color: $navTxthover !important
+}
+
+
+@media (max-width: 990px) {
+    .navbar-header {
+        float: none;
+    }
+    .navbar-left,.navbar-right {
+        float: none !important;
+    }
+    nav.navbar a.navbar-brand{
+        position: fixed;
+        margin-right: 50px;
+    }
+    .navbar-toggle {
+        display: block;
+        background-color: $navBg !important;
+    }
+    .navbar-toggle:hover, .navbar-toggle:focus {
+        display: block;
+        background-color: $navTxt !important;
+    }
+ 
+    .navbar-fixed-top {
+        top: 0;
+        border-width: 0 0 1px;
+    }
+    .navbar-collapse.collapse {
+        display: none!important;
+        background-color: $navBg !important;
+    }
+    .navbar-nav {
+        float: none!important;
+        margin-top: 7.5px;
+    }
+    .navbar-nav>li {
+        float: none;
+    }
+    .navbar-nav>li>a {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    .collapse.in{
+        display:block !important;
+    }
+    //custom
+    .navbar .dropdown .dropdown-menu{
+        margin-left: 0px !important;
+        width: 500px !important;
+        height: auto !important;
+        border-top: 2px $navTxthover solid;
+        background-color: $navHover!important;;
+    }
+}
+//end of media query
+.col-md-4 .well{
+    background: white !important;
+}
+.well .page-header{
+    background: $navHover !important;
+    color: $navTxt !important;
+    text-align: center !important;
+    padding-top: 10px !important;
+    margin: 0 !important;
+}
+.well .page-header .glyphicon{
+    font-size: 28px !important;
+
+}
+.well .body{
+    margin-top: 20px !important;
+}
+.panel-info{
+    border: 1px #eee solid;
+    //padding-top: 5px !important;
+}
+
+//well
+.well{
+    border: none;
+}
+
