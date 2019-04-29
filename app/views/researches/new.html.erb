@@ -1,0 +1,17 @@
+<%= form_for( @research ) do |f| %>
+  <h2 class="form-header">Add New </h2>
+       <% if @research.errors %>
+        <% @research.errors.full_messages.each do |msg|%>
+         <div class="alert alert-danger"><%= msg %></div>
+        <%end%>
+        <%end%>
+  <div class="form-group">
+      <%= f.label :title%>
+      <%= f.text_field :title, class:'form-control'%>
+  </div>
+  <div class="form-group">
+      <%= f.label :body%>
+      <%= f.cktext_area :body, class:'form-control'%>
+  </div>
+  <%= f.submit "Submit" , class:'btn btn-primary'%>
+<% end %>

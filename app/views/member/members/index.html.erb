@@ -1,0 +1,26 @@
+<h2 class="page-header">MANAGE USERS</h2>
+<%= link_to  "Add User", new_member_member_path, class:'btn btn-primary pull-right' %>
+
+  <%if @members.exists?%>
+    <table class="table table-stripped "> 
+        <tr>
+            <th>Names</th>
+            <th>Email</th>
+            <th>Role</th>
+            <th>Telephone</th>
+            <th>Joined At</th>
+            <th>Action</th>
+        </tr>
+        <% @members.each do |member|%>
+            <td><%= member.name%></td>
+            <td><%= member.email%></td>
+            <td><%= member.role%></td>
+            <td><%= member.telephone%></td>
+            <td><%= member.created_at%></td>
+            <td><%= link_to  "Update", edit_member_member_path(member) %> | <%= link_to  "Delete", edit_member_member_path(member), method: :delete %></td>
+        <% end%>
+        </table>
+  <% else %>
+    <p>No information available for you, you better contact administrator!!</p>
+  <% end%>
+    

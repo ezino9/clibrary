@@ -1,0 +1,17 @@
+<% if user_signed_in? %>
+<%= link_to  "Add New", new_cblog_path, class:'btn btn-primary pull-right' %>
+ <hr>
+<div class="row">
+  <% if @cblogs.exists?%>
+  <% @cblogs.each do |blog|%>
+    <div class="col-md-3">
+        <h4><%= link_to  "#{blog.title}", cblog_path(blog) %><h4>
+        <%= image_tag  "#{blog.coverpicture}", width:'50%' %>
+    </div>
+  <%end%>
+<% else %>
+<p>No blog available</p>
+<% end %>
+  
+</div>
+<%end%>

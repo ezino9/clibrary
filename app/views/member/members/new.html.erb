@@ -1,0 +1,35 @@
+<%= form_for [:member, @member] do |f| %>
+<h2 class="form-signin-heading">User Registration Form</h2>
+    <% if @member.errors.any? %>
+        <% @member.errors.full_messages.each do |msg| %>
+           <div class="alert alert-danger"><%= msg %></div>
+        <% end %>
+        
+    <% end %>
+    <div class="form-group">
+        <%= f.label :name, class:'sr-only' %>
+        <%= f.text_field :name, class:'form-control', placeholder:'Name' %>
+    </div>
+    <div class="form-group">
+        <%= f.label :email, class:'sr-only' %>
+        <%= f.text_field :email, class:'form-control', placeholder:'Email address' %>
+    </div>
+    <div class="form-group">
+       <%= f.label :role, class:'sr-only'%>
+       <%= f.text_field :role, placeholder:'Member role or position', class:'form-control'%>
+   </div>
+    <div class="form-group" id="department">
+        <%= f.label :telephone, class:'sr-only' %>
+        <%= f.text_field :telephone, class:'form-control' %>
+    </div>
+    <div class="form-group">
+        <%= f.label :password, class:'sr-only' %>
+        <%= f.password_field :password, class:'form-control', placeholder:'Password' %>
+    </div>
+    <div class="form-group">
+        <%= f.label :password_confirmation, class:'sr-only' %>
+        <%= f.password_field :password_confirmation, class:'form-control', placeholder:'Confirm password' %>
+    </div>
+    <%= f.submit "Submit", class:'btn btn-primary' %>
+    <%= link_to  "Cancel", member_members_path, class:'btn btn-default' %>
+<% end %>

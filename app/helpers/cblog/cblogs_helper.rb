@@ -1,0 +1,2 @@
+module Cblog::CblogsHelper
+end

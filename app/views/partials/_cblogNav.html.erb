@@ -1,0 +1,9 @@
+<ul class="nav nav-tabs cblog">
+<% if @categories.exists?%>
+  <%@categories.each do |category|%>
+    <li > <%= link_to  "#{category.name}", cblog_category_path(category) %></li>
+  <%end%>
+<%else%>
+<p>This page is underconstruction, it has no content</p>
+<%end%>
+</ul>

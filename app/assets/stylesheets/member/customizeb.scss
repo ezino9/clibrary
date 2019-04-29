@@ -1,0 +1,49 @@
+/* =============================================================
+   HEADER SECTION STYLES
+ ============================================================ */
+ header {
+    background-color: rgb(9, 165, 255);
+    color: #fff;
+    padding: 10px;
+    text-align: right;
+}
+
+/* MENU LINKS SECTION*/
+
+.menu-section {
+    background-color: rgb(17, 41, 119);
+}
+
+#menu-top a {
+    color: #FFF;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 10px 10px 10px 10px;
+    text-transform: uppercase;
+}
+
+.menu-top-active {
+    background-color: #C36464;
+}
+
+.menu-section .nav > li > a:hover,.menu-section .nav > li > a:focus {
+    background-color: #F0677C!important;
+}
+
+.menu-section .dropdown-menu > li > a:hover,.menu-section .dropdown-menu > li > a:focus {
+    background-color: rgb(9, 165, 255)!important;
+}
+
+.navbar-inverse {
+    background-color: #C36464;
+    border-color: transparent;
+}
+
+.navbar-toggle {
+    background-color: #F0677C;
+    border: 1px solid #fff;
+}
+
+.navbar {
+    margin-bottom: 0px;
+}

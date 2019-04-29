@@ -1,4 +1,61 @@
 Rails.application.routes.draw do
+  namespace :member do
+    get 'dashboard' =>'dashboard/index', :as => 'dashboard'
+  end
+  namespace :member do
+    get 'members/new'
+    get 'members/create'
+    get 'members/edit'
+    get 'members/update'
+    get 'members/index'
+    get 'members/destroy'
+  end
+  namespace :cblog do
+    get 'cblogs/new'
+    get 'cblogs/create'
+    get 'cblogs/edit'
+    get 'cblogs/update'
+    get 'cblogs/index'
+    get 'cblogs/show'
+    get 'cblogs/delete'
+  end
+  get 'categories/new'
+  get 'categories/create'
+  get 'categories/edit'
+  get 'categories/update'
+  get 'categories/show'
+  get 'categories/index'
+  get 'categories/destroy'
+  namespace :cblog do
+    get 'categories/new'
+    get 'categories/create'
+    get 'categories/edit'
+    get 'categories/update'
+    get 'categories/show'
+    get 'categories/index'
+    get 'categories/destroy'
+  end
+  get 'cblogs/new'
+  get 'cblogs/create'
+  get 'cblogs/edit'
+  get 'cblogs/update'
+  get 'cblogs/index'
+  get 'cblogs/show'
+  get 'cblogs/destroy'
+  get 'clibraries/new'
+  get 'clibraries/create'
+  get 'clibraries/edit'
+  get 'clibraries/update'
+  get 'clibraries/index'
+  get 'clibraries/show'
+  get 'clibraries/destroy'
+  get 'researches/new'
+  get 'researches/create'
+  get 'researches/edit'
+  get 'researches/update'
+  get 'researches/index'
+  get 'researches/show'
+  get 'researches/destroy'
   get 'dashboard' => 'dashboard#index'
   get 'contact' => 'contacts#new', :as => 'contact'
   get 'contacts/create'
@@ -9,27 +66,6 @@ Rails.application.routes.draw do
   get 'partners/index'
   get 'partners/show'
   get 'partners/destroy'
-  get 'researchs/new'
-  get 'researchs/create'
-  get 'researchs/edit'
-  get 'researchs/update'
-  get 'researchs/index'
-  get 'researchs/show'
-  get 'researchs/destroy'
-  get 'cnewses/new'
-  get 'cnewses/create'
-  get 'cnewses/edit'
-  get 'cnewses/update'
-  get 'cnewses/index'
-  get 'cnewses/show'
-  get 'cnewses/destroy'
-  get 'cribraries/new'
-  get 'cribraries/create'
-  get 'cribraries/edit'
-  get 'cribraries/update'
-  get 'cribraries/index'
-  get 'cribraries/show'
-  get 'cribraries/destroy'
   get 'assessmentblogs/new'
   get 'assessmentblogs/create'
   get 'assessmentblogs/edit'
@@ -63,8 +99,17 @@ Rails.application.routes.draw do
   get 'about/index'
 
 
-  resources :entrepreneurblogs, :clibraries, :assessmentblogs, :cnewses, :entrepreneurs, :researchs, :assessments, :partners
+  resources :entrepreneurblogs, :clibraries, :assessmentblogs, :cblogs, :entrepreneurs, :researches, :assessments, :partners, :categories
   resources :contacts, only: [:new, :create, :destory]
+
+  namespace :cblog do
+    resources :cblogs, :categories
+  end
+  namespace :member do
+    resources :members
+
+    root 'dashboard#index'
+  end
 
   root 'about#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

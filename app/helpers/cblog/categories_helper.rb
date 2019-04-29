@@ -1,0 +1,2 @@
+module Cblog::CategoriesHelper
+end

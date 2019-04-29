@@ -1,4 +1,6 @@
-
+<%if user_signed_in? %>
+<h2 class="page-header">Welcome to CL Dashboard</h2>
+<% else %>
     <div class="row">
        <h2 class="page-header text-center">About Us</h2>
         <!--Our mission -->
@@ -58,4 +60,5 @@
                </div>
            </div> 
         </div>
+<% end %>
 

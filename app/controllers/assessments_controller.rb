@@ -30,6 +30,8 @@ class AssessmentsController < ApplicationController
   end
 
   def destroy
+    @assessment= Assessment.find(params[:id])
+    @assessment.delete
   end
 
   private def assessment_params
